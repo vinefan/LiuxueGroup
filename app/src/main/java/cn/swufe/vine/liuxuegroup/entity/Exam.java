@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 public class Exam {
 
     @PrimaryKey
-    public int id;
+    private int id;
 
     @ColumnInfo(name = "exam_name")
     public String name;
