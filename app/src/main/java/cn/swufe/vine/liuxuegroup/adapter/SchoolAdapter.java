@@ -89,8 +89,8 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
                 Intent intent = new Intent(activity, ExamActivity.class);
                 // 添加携带数据
                 intent.putExtra("SCHOOL_ABBR", school.getSchoolAbbr());
-                String str_logoid = String.valueOf(school.getLogoImgID());
-                intent.putExtra("SCHOOL_IMG", str_logoid);
+                String str_logo_id = String.valueOf(school.getLogoImgID());
+                intent.putExtra("SCHOOL_IMG", str_logo_id);
                 activity.startActivity(intent);
             }
         });
