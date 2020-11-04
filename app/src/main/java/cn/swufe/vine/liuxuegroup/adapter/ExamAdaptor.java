@@ -69,4 +69,5 @@ public class ExamAdaptor extends BaseAdapter {
         TextView titleTV;
         TextView contentTV;
     }
+
 }
