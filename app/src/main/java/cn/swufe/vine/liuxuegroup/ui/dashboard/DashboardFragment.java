@@ -1,25 +1,19 @@
 package cn.swufe.vine.liuxuegroup.ui.dashboard;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.room.PrimaryKey;
 
 import java.util.List;
 
 import cn.swufe.vine.liuxuegroup.R;
-import cn.swufe.vine.liuxuegroup.adaptor.ExamAdaptor;
-import cn.swufe.vine.liuxuegroup.entity.Exam;
+import cn.swufe.vine.liuxuegroup.adapter.ExamAdaptor;
 import cn.swufe.vine.liuxuegroup.entity.ShowedExam;
 import cn.swufe.vine.liuxuegroup.util.ExamUtil;
 

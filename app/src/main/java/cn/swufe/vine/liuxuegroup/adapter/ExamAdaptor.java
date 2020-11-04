@@ -1,4 +1,4 @@
-package cn.swufe.vine.liuxuegroup.adaptor;
+package cn.swufe.vine.liuxuegroup.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,6 @@ import java.util.List;
 
 import cn.swufe.vine.liuxuegroup.R;
 import cn.swufe.vine.liuxuegroup.entity.ShowedExam;
-import cn.swufe.vine.liuxuegroup.ui.dashboard.DashboardFragment;
 
 public class ExamAdaptor extends BaseAdapter {
 
