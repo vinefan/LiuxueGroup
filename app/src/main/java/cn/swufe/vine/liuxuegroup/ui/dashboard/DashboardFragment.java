@@ -47,8 +47,13 @@ public class DashboardFragment extends Fragment{
         examList = ExamUtil.getExamList();
         adapter = new ExamAdaptor(examList, getActivity());
         listView.setAdapter(adapter);
-
-
         return root;
     }
+//
+//    public void ExamItemClick(View view){
+//        // 获取itemView的位置
+//        int position = mRecyclerView.getChildAdapterPosition(view);
+//        Toast.makeText(MainActivity.this, "点击了 " + mDatas.get(position),
+//                Toast.LENGTH_SHORT).show();
+//    }
 }

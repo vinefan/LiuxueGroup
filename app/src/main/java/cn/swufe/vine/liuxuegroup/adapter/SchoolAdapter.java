@@ -1,29 +1,46 @@
 package cn.swufe.vine.liuxuegroup.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import cn.swufe.vine.liuxuegroup.ExamActivity;
+import cn.swufe.vine.liuxuegroup.MainActivity;
 import cn.swufe.vine.liuxuegroup.R;
+import cn.swufe.vine.liuxuegroup.SchoolActivity;
 import cn.swufe.vine.liuxuegroup.entity.School;
 
 public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolViewHolder> {
 
     private List<School> schoolList;
+    private AdapterView.OnItemClickListener   onItemClickListener;
+    private Context context;
+    private Activity activity;
 
-    public SchoolAdapter(List<School> schoolList) {
+
+
+// 构造器
+    public SchoolAdapter(List<School> schoolList, Context context, Activity activity) {
         this.schoolList = schoolList;
+        this.context = context;
+        this.activity = activity;
     }
 
-
+// holder
     public static class SchoolViewHolder extends RecyclerView.ViewHolder {
         ImageView logoImage;
         TextView schoolAbbr;
@@ -34,6 +51,18 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
             schoolAbbr = view.findViewById(R.id.school_abbr);
         }
     }
+
+
+
+//// 监听接口
+//    public interface MyItemClickListener{
+//        void onItemClick(View view, int position);
+//    }
+//
+//    public void setOnItemClickListener(MyItemClickListener onItemClickLitsener){
+//        this.onItemClickListener = onItemClickListener;
+//    }
+
 
     @NonNull
     @Override
@@ -47,10 +76,24 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
 
 
     @Override
-    public void onBindViewHolder(SchoolViewHolder holder, int position) {
-        School school = schoolList.get(position);
+    public void onBindViewHolder(final SchoolViewHolder holder, int position) {
+        final School school = schoolList.get(position);
         holder.logoImage.setImageResource(school.getLogoImgID());
         holder.schoolAbbr.setText(school.getSchoolAbbr());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "我被点击了", Toast.LENGTH_SHORT).show();
+
+                // 跳转
+                Intent intent = new Intent(activity, ExamActivity.class);
+                // 添加携带数据
+                intent.putExtra("SCHOOL_ABBR", school.getSchoolAbbr());
+                String str_logoid = String.valueOf(school.getLogoImgID());
+                intent.putExtra("SCHOOL_IMG", str_logoid);
+                activity.startActivity(intent);
+            }
+        });
     }
 
 

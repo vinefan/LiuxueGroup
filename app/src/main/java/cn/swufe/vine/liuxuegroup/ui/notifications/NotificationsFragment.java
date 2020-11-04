@@ -1,10 +1,12 @@
 package cn.swufe.vine.liuxuegroup.ui.notifications;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import cn.swufe.vine.liuxuegroup.MainActivity;
 import cn.swufe.vine.liuxuegroup.R;
 import cn.swufe.vine.liuxuegroup.adapter.SchoolAdapter;
 import cn.swufe.vine.liuxuegroup.entity.School;
@@ -47,9 +50,19 @@ public class NotificationsFragment extends Fragment {
         SchoolUtil schoolutil = new SchoolUtil();
         List<School> schools = schoolutil.getSchools();
 
-        SchoolAdapter adapter = new SchoolAdapter(schools);
+
+
+        SchoolAdapter adapter = new SchoolAdapter(schools, getContext(), getActivity());
+
         recyclerView.setAdapter(adapter);
 
         return root;
     }
+
+    // Container Activity must implement this interface
+    public interface OnArticleSelectedListener {
+        public void onArticleSelected();
+    }
+
+
 }
