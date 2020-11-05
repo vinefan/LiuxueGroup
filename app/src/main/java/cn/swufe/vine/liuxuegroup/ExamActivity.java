@@ -19,19 +19,19 @@ public class ExamActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 跳转
-                Intent intent = new Intent(view.getContext(), MainActivity.class);
-//                String str_back_frag_id = String.valueOf();
-//                intent.putExtra("BACK_FRAG", str_back_frag_id);
-                view.getContext().startActivity(intent);
-            }
-        });
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // 跳转
+//                Intent intent = new Intent(view.getContext(), MainActivity.class);
+////                String str_back_frag_id = String.valueOf();
+////                intent.putExtra("BACK_FRAG", str_back_frag_id);
+//                view.getContext().startActivity(intent);
+//            }
+//        });
     }
 }

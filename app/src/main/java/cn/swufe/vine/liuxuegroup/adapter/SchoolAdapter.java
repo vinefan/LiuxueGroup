@@ -86,7 +86,7 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchoolView
                 Toast.makeText(context, "我被点击了", Toast.LENGTH_SHORT).show();
 
                 // 跳转
-                Intent intent = new Intent(activity, ExamActivity.class);
+                Intent intent = new Intent(activity, SchoolActivity.class);
                 // 添加携带数据
                 intent.putExtra("SCHOOL_ABBR", school.getSchoolAbbr());
                 String str_logo_id = String.valueOf(school.getLogoImgID());
